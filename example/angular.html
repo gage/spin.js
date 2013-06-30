@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="foo">
+<head>
+  <title>spin.js</title>
+  <style type="text/css">
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+  }
+  .preview {
+    background: #aaa;
+    color: black;
+    width: 220px;
+    height: 220px;
+    margin: 0 20px;
+    float: left;
+    border-radius: 10px;
+  }
+  #preview2 {
+    background: #666;
+    color: red;
+  }
+  #preview3 {
+    background: #ccc;
+    color: red;
+  }
+  </style>
+</head>
+<body>
+
+<div id="preview1" spin="{color:'#000', lines:10, length:8, width:4, radius:8}" class="preview"></div>
+<div id="preview2" spin class="preview"></div>
+<div id="preview3" spin="{color:'#333'}" spinning="loading" class="preview"></div>
+<button ng-hide="loading" ng-click="loading=true">start</button>
+<button ng-show="loading" ng-click="loading=false">stop</button>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+<script src="../spin.js"></script>
+<script src="../angular.spin.js"></script>
+<script>
+  var app = angular.module('foo', ['ngSpin']);
+</script>
+</body>
+</html>
